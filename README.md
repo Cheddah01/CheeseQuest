@@ -8,6 +8,7 @@ You wake in a woodland shrine, meet Brie, investigate a missing shipment, and di
 
 ## In this release
 
+- A full-screen pixel interface with character portraits, hand-drawn item icons, framed menus, and responsive layouts.
 - A complete opening chapter with nine main-story milestones and two diplomatic resolutions.
 - Seven named characters with dialogue that responds to your progress.
 - A connected region with a shrine, campsite, village, landing, checkpoint, tollhouse, and road to Wheybridge.
@@ -60,6 +61,7 @@ Visit http://localhost:4173. The game generates all pixel art and optional sound
 node --check world.js
 node --check story.js
 node --check game.js
+node --check ui.js
 node tests/game.test.cjs
 ```
 
@@ -71,6 +73,7 @@ The deployment workflow runs these checks before publishing to GitHub Pages. Pus
 
 - `world.js`: geography, actors, objects, encounters, and nation descriptions.
 - `story.js`: dialogue, choices, and main quest objectives.
+- `ui.js`: original pixel icons and character portraits.
 - `game.js`: simulation, rendering, input, menus, audio, and saves.
 - `index.html` and `style.css`: responsive interface and overlays.
 - `tests/game.test.cjs`: dependency-free simulation tests.

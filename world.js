@@ -16,6 +16,7 @@ window.CheeseWorld = {
     {id:'wedge',kind:'wedge',x:330,y:1162,label:'Inspect the extremely important cheese'},
     {id:'camp',kind:'camp',x:440,y:1040,label:'Rest & cook'},
     {id:'hearth',kind:'camp',x:997,y:860,label:'Rest & cook at the village hearth'},
+    {id:'feast',kind:'feast',x:1170,y:915,label:'Sit at the eighth place'},
     {id:'sign',kind:'sign',x:670,y:794,label:'Read the disputed sign'},
     {id:'wagon',kind:'wagon',x:1485,y:707,label:'Investigate the overturned wagon'},
     {id:'door',kind:'door',x:1450,y:350,label:'Enter the old tollhouse'},

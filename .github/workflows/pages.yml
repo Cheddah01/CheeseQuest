@@ -22,6 +22,7 @@ jobs:
         run: |
           node --check world.js
           node --check story.js
+          node --check chronicle.js
           node --check game.js
           node --check ui.js
           node tests/game.test.cjs

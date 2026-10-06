@@ -9,10 +9,13 @@ You wake in a woodland shrine, meet Brie, investigate a missing shipment, and di
 ## In this release
 
 - A full-screen pixel interface with character portraits, hand-drawn item icons, framed menus, and responsive layouts.
-- A complete opening chapter with nine main-story milestones and two diplomatic resolutions.
-- Seven named characters with dialogue that responds to your progress.
+- A complete opening chapter and playable follow-up interlude, **The Eighth Place**, with fourteen story milestones.
+- Two diplomatic resolutions, a consequential response to Brie, and a personal promise that carries into the farewell.
+- Seven named characters with progress-aware dialogue and nineteen optional conversation topics.
 - A connected region with a shrine, campsite, village, landing, checkpoint, tollhouse, and road to Wheybridge.
-- Three optional favors whose rewards improve your character and whose outcomes appear in the ending.
+- Three original favors, **A Letter Without a Flag**, and **The Fourth Wheel** investigation.
+- A shared-supper scene with multiple speakers, a gathered cast, and callbacks to favors, evidence, and choices.
+- An Evidence journal that records discoveries as you find them.
 - Hidden courier boots and a heart upgrade.
 - A tollhouse cellar with a three-valve puzzle, ordinary enemies, and the Tithe Collector boss.
 - Sword combat, a stamina-based dodge, sprinting, telegraphed charges, and a second boss phase.
@@ -20,7 +23,9 @@ You wake in a woodland shrine, meet Brie, investigate a missing shipment, and di
 - A regional map with selectable compass destinations, quest journal, satchel, and seven-nation atlas.
 - Browser-local saves, safe recovery from invalid saved data, and protection against older tabs overwriting newer progress.
 
-The wider seven-nation campaign is introduced through the story and atlas. This release contains the complete Marches chapter; the other nations and Wheybridge are future chapters.
+The playable story now includes the Marches chapter and its interlude. Continue after the first chapter ending to investigate the fourth shipment, confront a familiar face, share supper, and receive a second invitation. Wheybridge and the other nations remain future playable chapters.
+
+Existing saves continue normally. If you already completed Chapter I, the quest tracker points to the new dispatch ledger in the tollhouse cellar. No restart is needed.
 
 ## Controls
 
@@ -41,7 +46,7 @@ Use the visible buttons for branching conversation choices. Touch controls appea
 
 ## Progress and recovery
 
-Progress saves automatically to `cheesequest-chapter1-v2` on the current device and browser origin. The original demo's `cheesequest-v1` save is preserved separately. This chapter begins a new story.
+Progress saves automatically to `cheesequest-chapter1-v2` on the current device and browser origin. The original demo's `cheesequest-v1` save is preserved separately. Updates preserve Chapter I progress and add missing story fields automatically.
 
 Losing all hearts returns you to Brie's camp without losing discoveries or quest supplies. Resting restores all hearts and regrows ingredients. The pause menu offers a confirmed chapter restart. Clearing browser storage removes local progress; saves do not sync across devices.
 
@@ -60,19 +65,21 @@ Visit http://localhost:4173. The game generates all pixel art and optional sound
 ```sh
 node --check world.js
 node --check story.js
+node --check chronicle.js
 node --check game.js
 node --check ui.js
 node tests/game.test.cjs
 ```
 
-The simulation suite checks reachability, both chapter endings, puzzle gating, boss vulnerability, cooking, side quests, equipment rewards, save restoration, invalid data, multi-tab saves, and defeat recovery. Browser checks cover the opening, map, dialogue choices, village, cellar, boss rendering, and narrow layouts.
+The 23-check simulation suite covers reachability, both original endings, all eight interlude choice combinations, the letter quest, physical evidence, multi-speaker dialogue, conditional supper scenes, legacy saves, puzzle gating, combat, equipment, recovery, and storage conflicts. Browser checks cover the opening, map, dialogue choices, village, cellar, boss rendering, and narrow layouts.
 
 The deployment workflow runs these checks before publishing to GitHub Pages. Pushes to `main` publish automatically; Pages is configured to use GitHub Actions.
 
 ## Structure
 
 - `world.js`: geography, actors, objects, encounters, and nation descriptions.
-- `story.js`: dialogue, choices, and main quest objectives.
+- `story.js`: opening chapter dialogue and objectives.
+- `chronicle.js`: character topics, interlude scenes, favors, and evidence.
 - `ui.js`: original pixel icons and character portraits.
 - `game.js`: simulation, rendering, input, menus, audio, and saves.
 - `index.html` and `style.css`: responsive interface and overlays.
@@ -80,4 +87,4 @@ The deployment workflow runs these checks before publishing to GitHub Pages. Pus
 
 ## Story direction
 
-The broader campaign follows the Guest's attempt to reunite seven cheese nations after the Great Cheese disappears. The Marches introduces its central themes through a local dispute: food marked for destruction, a village in need, and the difficult work of cooperation. The High Pasteur's invitation closes the chapter and opens the road to the capital.
+The broader campaign follows the Guest's attempt to reunite seven cheese nations after the Great Cheese disappears. The Marches introduces its central themes through a local dispute: food marked for destruction, a village in need, and the difficult work of cooperation. The interlude follows the missing shipment into a larger mystery, brings the cast together, and gives the Guest a reason to question the High Pasteur in person.

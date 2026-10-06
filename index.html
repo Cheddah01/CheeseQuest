@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f0e6">
+  <meta name="description" content="A tiny woodland adventure in pursuit of a very great cheese.">
+  <title>CheeseQuest — a little woodland adventure</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%233e604a'/%3E%3Cpath d='M20 6l4 10 10 4-10 4-4 10-4-10-10-4 10-4z' fill='%23f6db8e'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <a class="brand" href="./" aria-label="CheeseQuest home"><span class="brand-mark">✦</span> LITTLE WORLDS <span class="brand-divider"></span> NO. 001</a>
+      <div class="header-actions"><button id="sound" aria-pressed="false" title="Toggle sound">♫ <span>Sound off</span></button><button id="journalButton" aria-expanded="false">▤ <span>Field notes</span></button></div>
+    </header>
+    <section class="intro"><div><div class="eyebrow"><span></span> A VERY SMALL HERO. A VERY GREAT CHEESE.</div><h1>CheeseQuest<span>✦</span></h1><p>Follow your nose. Brave the woods. Find the legendary cheese.</p></div><div class="edition"><span>FERNWOOD GLADE</span><span>your first adventure</span></div></section>
+    <section class="game-shell" aria-label="CheeseQuest game">
+      <canvas id="game" width="576" height="360" tabindex="0" aria-label="Top-down woodland adventure. Use WASD or arrow keys to move, Space to swing your sword, E to interact, Shift to sprint. Find three golden rinds and take them to the cheese shrine."></canvas>
+      <div class="hud top-left"><div id="hearts" aria-label="Health"></div><div class="stamina"><div id="stamina"></div></div><span class="hero-label">LITTLE WANDERER</span></div>
+      <div class="quest hud"><span class="quest-kicker">THE GREAT CHEESE HUNT</span><div id="questText">Find the three golden rinds</div><div class="spark-row" id="sparks"><i>✦</i><i>✦</i><i>✦</i></div></div>
+      <div class="area-label" id="area">FERNWOOD GLADE<span>A quiet beginning</span></div>
+      <div class="pocket hud"><span title="Mushrooms">🍄 <b id="mushrooms">0</b></span><span title="Berry sprigs">❧ <b id="berries">0</b></span><button id="eat" title="Eat woodland stew (Q)">♨ <b id="meals">0</b><kbd>Q</kbd></button></div>
+      <div class="interaction" id="interaction" hidden></div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <button class="pause-button" id="pauseButton" aria-label="Pause game">Ⅱ</button>
+      <div class="veil" id="welcome"><div class="welcome-card"><div class="tiny-star">✦</div><div class="eyebrow">SOME LEGENDS ARE BEST SERVED AGED</div><h2>Something great is ripening.</h2><p>Deep in Fernwood waits the Great Cheese.<br>Find three golden rinds, unseal the old shrine,<br class="desktop-break"> and claim the snack of a lifetime.</p><button class="primary" id="start">Begin the cheese hunt <span>↗</span></button><span class="welcome-foot">Take your time. There’s no wrong turn.</span></div></div>
+      <div class="veil" id="pause" hidden><div class="welcome-card"><div class="tiny-star">☾</div><h2>A little breather.</h2><p>Your adventure is saved on this device.</p><button class="primary" id="resume">Back to the woods <span>↗</span></button><button class="text-button" id="restart">Start a fresh adventure</button><p class="reset-confirm" id="resetConfirm" hidden>Start over and clear this adventure?<button id="confirmReset">Yes, start fresh</button><button id="cancelReset">Keep exploring</button></p></div></div>
+      <div class="dialog" id="dialog" hidden role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><span class="dialog-eyebrow" id="dialogEyebrow"></span><h2 id="dialogTitle"></h2><p id="dialogText"></p><button id="dialogClose">Keep wandering <span>↗</span></button></div>
+      <aside class="journal" id="journal" hidden aria-label="Field notes"><button id="journalClose" class="close-button" aria-label="Close field notes">×</button><div class="eyebrow">A WANDERER’S JOURNAL</div><h2>Field notes</h2><p class="journal-intro">A few things worth remembering.</p><ol><li>Defeat the three moss slimes carrying golden rind fragments.</li><li>Bring all three rinds to the cheese shrine in the northeast.</li><li>Unseal the shrine. Claim the fabled Great Cheese.</li></ol><div class="journal-note">Gather mushrooms and red berry sprigs. At the campfire, one of each becomes a warming stew that restores your hearts.</div><p class="journal-tip">Try following the paths. Walk across the pond’s wooden bridge. Say hello to Brie, the camp fox.</p><span class="save-note" id="saveNote">Your progress saves automatically on this device.</span></aside>
+      <div class="touch-controls"><div class="dpad"><button data-key="ArrowUp" aria-label="Move up">↑</button><button data-key="ArrowLeft" aria-label="Move left">←</button><button data-key="ArrowDown" aria-label="Move down">↓</button><button data-key="ArrowRight" aria-label="Move right">→</button></div><div class="touch-actions"><button data-action="interact">E</button><button data-action="attack">⚔</button></div></div>
+    </section>
+    <footer class="below-game"><div class="controls"><span><kbd>W A S D</kbd> move</span><span><kbd>SPACE</kbd> sword</span><span><kbd>E</kbd> interact</span><span><kbd>SHIFT</kbd> sprint</span></div><span class="footer-note"><i></i> A grand quest for a very good cheese.</span></footer>
+  </main>
+</body>
+</html>
